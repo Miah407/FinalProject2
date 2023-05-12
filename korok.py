@@ -5,7 +5,7 @@ import random as r
 app = Ursina()  # https://www.youtube.com/watch?v=OUhSnXamVK0
 window.color = color.white  # Creates the window colour
 
-korok = Animation('assets/korok',
+Korok = Animation('assets/korok',
                   collider='box',
                   x=-7)  # creates the player for the game, photo taken from https://www.etsy.com/listing/1258493574
 
@@ -59,8 +59,8 @@ def update():
             grass.x += 100
     for f in fungi:
         f.x -= 6 * time.dt
-    if korok.intersects().hit:  # This is the endgame screen for when the player hits a mushroom
-        korok.texture = 'assets/hit'
+    if Korok.intersects().hit:  # This is the endgame screen for when the player hits a mushroom
+        Korok.texture = 'assets/hit'
         application.pause()
         Text('Game over',
              origin=(0, -3),
@@ -80,11 +80,11 @@ def update():
 def input(jump):
     global score
     if jump == 'space':
-        if korok.y <= 0.01:
-            korok.animate_y(2,
+        if Korok.y <= 0.01:
+            Korok.animate_y(2,
                             duration=0.4,
                             curve=curve.out_sine)  # Jumping animation up
-            korok.animate_y(0,
+            Korok.animate_y(0,
                             duration=0.4,
                             delay=0.4,
                             curve=curve.in_sine)
