@@ -77,10 +77,26 @@ def update():
              color=color.red,
              scale=3)
         label.text = ''  # Removes origional score tracker
-        Text(f'Score: {score}',
-             origin=(0, -2.5),
-             color=color.black,
-             scale=2)
+        if score == 0:
+            Text(f'You scored {score}. Remember to press space to jump!',
+                 origin=(0, -2.5),
+                 color=color.black,
+                 scale=2)
+        elif score <= 5:
+            Text(f'You scored {score}. Go again for a better score!',
+                 origin=(0, -2.5),
+                 color=color.black,
+                 scale=2)
+        elif score <= 10:
+            Text(f"You scored {score}. You're pretty good!",
+                 origin=(0, -2.5),
+                 color=color.black,
+                 scale=2)
+        else:
+            Text(f"You scored {score}. You're an expert!",
+                 origin=(0, -2.5),
+                 color=color.black,
+                 scale=2)
         Text('Refresh to try again!',
              origin=(0, -2),
              color=color.black,
