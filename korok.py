@@ -33,8 +33,18 @@ mushroom_3 = Entity(model='quad',
                     x=10,
                     y=-0.4,
                     collider='box')
+mushroom_4 = Entity(model='quad',
+                    texture='assets/mushroom_4',
+                    x=10,
+                    y=-0.4,
+                    collider='box')
+mushroom_5 = Entity(model='quad',
+                    texture='assets/mushroom_5',
+                    x=10,
+                    y=-0.4,
+                    collider='box')
 fungi = []
-mushrooms = [mushroom_1, mushroom_2, mushroom_3]  # A list of the different obsticles
+mushrooms = [mushroom_1, mushroom_2, mushroom_3, mushroom_4, mushroom_5]  # A list of the different obsticles
 
 label = Text(text=f'Your score: {0}',
              color=color.black,
@@ -96,6 +106,3 @@ camera.orthographic = True
 camera.fov = 10
 
 app.run()
-
-# Changes: Korok (zelda) themed, updated variable names, multiple types of
-# obstacles (example had one), coordinates, and a different scoring system.
