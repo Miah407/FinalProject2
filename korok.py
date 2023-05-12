@@ -77,7 +77,7 @@ def update():
              color=color.red,
              scale=3)
         label.text = ''  # Removes origional score tracker
-        if score == 0:
+        if score == 0: #Creates different end screens depending on the score
             Text(f'You scored {score}. Remember to press space to jump!',
                  origin=(0, -2.5),
                  color=color.black,
